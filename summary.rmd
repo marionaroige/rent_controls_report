@@ -1,0 +1,82 @@
+---
+title: "Summary on rent controls"
+author: "Mariona Roige Valiente"
+date: "07/02/2022"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(rtweet)
+
+```
+
+## Background
+Minister Williams mentioned rent controls on national TV this last week: 
+https://www.newshub.co.nz/home/politics/2022/02/associate-housing-minister-poto-williams-floats-rent-controls-as-cost-of-living-bites.html creating an interest peak on the topic, both in media:
+
+
+
+
+And social media: 
+
+```{r twitter_authenticate}
+api_key = "XsHAUOWl8A9XFDoZrXIG1tjRi"
+api_secret = "xhbxZ26y5oGw5018AY2vuaxAVi08rcYDEWhs4uJOpJZjDvQFGX"
+
+## authentication via web browser
+token <- create_token(
+  app = "sentiment",
+  consumer_key = api_key, 
+  consumer_secret = api_secret,
+  set_renv = FALSE
+  ) 
+token
+```
+
+```{r twitter_search}
+rt <- search_tweets(
+  "NZ rent controls", n = 18000, include_rts = TRUE, token = token)
+
+ts_plot(rt)
+```
+
+
+## Political views on rent controls
+Rent controls, as all market interventions, are controversial and spike public and expert's debate. Economists views on rent controls are unsuprisingly related to their ideological standpoints. In New Zealand, this is the current view on the topic.
+
+Current Government (Labour Party):
+Earlier in the term, Minister Robinson said rent controls weren't on the table: https://www.nzherald.co.nz/nz/government-has-no-plans-to-implement-rent-control-policy-robertson-says/WZ3NRLYL3KDZBQEOQHQSSCRWFQ/
+however, Associate Housing Minister Williams, floated the idea in a public appearance last week. 
+
+
+In favour of rent controls:
+NZ Green Party rent controls proposal https://d3n8a8pro7vhmx.cloudfront.net/beachheroes/pages/14651/attachments/original/1620018442/Reasonable_Rents_-_Green_Party_Discussion_Document.pdf?1620018442
+
+Renters United: https://www.rentersunited.org.nz/rentcontrolsnow/
+
+Against rent controls: 
+
+National party calls them 'draconian': https://www.national.org.nz/kiwis-paying-the-price-for-failed-housing-policy
+
+David Law from The New Zealand Initiative's view against them https://www.nzinitiative.org.nz/reports-and-media/reports/research-note-rent-controls-the-next-mistake-in-new-zealands-approach-to-housing-policy/
+The New Zealand Initiative is a free-market think tank. 
+
+## What are rent controls
+Rent controls is a broad term that is used to define a broad range of specific policy measures aimed at limiting or controlling private market rents in an area. They have been applied in different places in the world and they cannot be understood in isolation of the housing markets where they operate. 
+
+In general, a rent control is a mechanism by which a government (sometimes local government) sets the maximum price or maximum allowed rent increase of private market rents. A big consideration of how these controls are applied is whether the rents are controlled between tenancies, within tenancies, or fixed for a specific time period. 
+
+Another important consideration is what mechanism is used to decide the 'initial' rent. Common mechanisms are:
+
+a) Rent market based: Initial rents are linked to the rental market
+
+b) Points system: Model attempts to capture value without using market prices as starting point, using a measure of 'utility'
+c) Landlord cost-based:Model sets rents based on landlords' running costs
+d) Property value: Model uses a proportion of property value to determine maximum rent
+
+
+## What are the risks of rent controls
+
+## 
