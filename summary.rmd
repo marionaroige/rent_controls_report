@@ -8,7 +8,9 @@ output: html_document
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
-library(rtweet)
+#library(rtweet)
+library(ggplot2)
+library(ggfortify)
 
 ```
 
@@ -21,18 +23,26 @@ https://www.newshub.co.nz/home/politics/2022/02/associate-housing-minister-poto-
 
 And social media: 
 
-```{r twitter_authenticate}
-api_key = "XsHAUOWl8A9XFDoZrXIG1tjRi"
-api_secret = "xhbxZ26y5oGw5018AY2vuaxAVi08rcYDEWhs4uJOpJZjDvQFGX"
+```{r twitter_plot}
+readRDS('tweets.rds')
 
-## authentication via web browser
-token <- create_token(
-  app = "sentiment",
-  consumer_key = api_key, 
-  consumer_secret = api_secret,
-  set_renv = FALSE
-  ) 
-token
+map(strsplit(brandcar, split = " "), 1)
+
+data <- rt %>%
+        mutate(day_only = strsplit(as.character(created_at), ' ') %>% map_chr(.,1)) %>%
+        group_by(day_only) %>%
+        summarise(n = n()) %>%
+        mutate(day_only = as.Date(day_only))
+
+
+ggplot(data, aes(x = day_only, y = n)) +
+  geom_line() +
+  geom_point() +
+  theme_bw() +
+  xlab('Date') +
+  ylab('n') +
+  ggtitle("Number of daily tweets with the keywords \'NZ rent controls\'")
+
 ```
 
 ```{r twitter_search}
