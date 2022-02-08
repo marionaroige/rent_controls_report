@@ -1,6 +1,8 @@
 ---
 title: "Summary on rent controls"
+date: '08/02/2022'
 output: html_document
+
 ---
 
 ```{r setup, include = FALSE}
@@ -8,9 +10,30 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 #library(rtweet)
 library(ggplot2)
-library(ggfortify)
 
 ```
+## Exec summary
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+- Rental prices have increased during the past 24 months. Recent regulatory changes that might have an impact on rental prices include the Residential tenancies amendments act (2020) that limits rent increases to once every 12 months and in its second phase prohibits rent bidding. Additionally, Healthy Home standard (July 2021) which introduces quality standards of rental properties. 
+
+- There is a significant gap between supply and demand for dwellings which has resulted in ongoing pressure on rent price. However, rent price is correlated to income growth and to general inflation, which have both been increasing strongly during the past 24 months. When looking at the trends of those over time, they seem to show there is no sharp decrease in rent affordability. 
+
+- Rent controls are a housing market intervention that is being considered by a number of governments around the world as rent affordability becomes a political issue. Rent controls set a mechanism to limit rental price or rental price increase. However, rent controls need to be understood as a broad housing and urban development policy option and are unlikely to  be useful if used in isolation. 
+
+- One of the main arguments against rent controls is that they have the potential to reduce the rental stock and push the price up as landlords decide to remove rental dwellings from the market. Counterarguments to that are that those dwellings get sold instead, allowing people who were renting to now become owner-occupiers. Also, provisions can be put in the policy to help reduce disincentives for landlords. For example, allow for rent increases for new construction or after major improvements. 
+
+- A key piece of information required for the evaluation of rent control policies is understanding how people transition over different segments of housing tenure. We do not have a good enough understanding of the number of households that are in renting situations when they could be owner-occupiers, or whether they want to. This limits our understanding of the effects that any type of rent control would have on the housing market. 
+
+- Theoretical economic analysis of rent controls can become very complex as it needs to take into account how the housing market interacts with other important urban development such as labor mobility and transport. We need to be cautious around any analysis that considers the rental market in isolation. 
+
+
+</div>
+
 
 ## Background
 Minister Williams mentioned rent controls on national TV on 3rd February: 
@@ -73,7 +96,7 @@ Each one of these mechanisms are likely to have different effects on overall hou
 ## Risks of rent controls
 
 ### Decrease in the supply of rental accommodation
-When looking at rent controls using a simple supply and demand analysis of the rental market, it becomes apparent that increasing costs for landlords mean that at any given rental price, landlords will have higher costs and less benefits from renting and less rental accommodation will be offered to the market. In turn, that will drive higher rents and increase the competition between renters. 
+When looking at rent controls using a simple supply and demand analysis of the rental market, it becomes apparent that increasing costs for landlords mean that at any given rental price, landlords will have higher costs and less benefits from renting and less rental accommodation will be offered to the market. In turn, that will drive higher rents and increase the competition between renters. Other disincentives to landlords can see them not improving the quality of their rental properties over time, which would particularly hurt lower-income households in the long run if the policy is ever reversed.
 
 ```{r supply_dmeand, out.width = '60%', echo = FALSE}
 knitr::include_graphics('images/supply_demand.png')
@@ -105,22 +128,6 @@ Rent controls require an administrative infrastructure to establish the control 
 Rent regulation has been shown to be effective in limiting rent increases and no evidence has been found of them reducing the overall supply of housing, according to three studies cited in J.W.Mason. 
 In addition to their effect on the overall level of rents, rent regulations pay an important role in promoting neighborhood stability and protecting long term-tenants. 
 
-
-## Key points from a Sytem Intelligence point of view
-
-<style>
-div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
-</style>
-<div class = "blue">
-
-- Are we at a point where rent has become unaffordable enough to require rent controls? Nam could you please comment on this based on the rent affordability measures you have been working at? Particularly where we are at income vs rent and also number of households that are owner occupiers vs renters.
-- Rent controls need to be understood as a broad housing and urban development policy option and are not going to be useful if used in isolation and only with the idea in mind to increase renting affordability.  
-- There are gaps in our understanding of how households transition between tenures. We do not have a good grasp of the number of households that are in renting situations when they could be owner-occupiers. Our models of housing tenure are possibly over simplistic to understand what the effects of a rent control would be on the house market. 
-- When the microsimulation model of housing demand (microsim) is embedded in HUD, it will be possible to test the effects of different rent control policies.  
-- Theoretical economic analysis of rent controls can become very complex as it needs to take into account how the housing market interacts with other important urban development issues such as labour mobility and transport. 
-- Alan and Nam, could you please add here any further thoughts?
-
-</div>
 
 ## References
 
